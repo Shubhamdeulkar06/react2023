@@ -2947,31 +2947,64 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
+// this is conversion done by babel
 const parent = /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
     id: "parent",
     key: "e1"
-}, "Hello From React!");
-const child = /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
-    id: "child",
-    key: "e2"
-}, "Hello once agin");
-const newTag = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+}, "Hello From React! (This is written without using jsx)");
+// react element is an object
+const newElement = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
     className: "demo",
     children: "This is rendered using jsx"
 }, void 0, false, {
     fileName: "App.js",
     lineNumber: 11,
-    columnNumber: 16
+    columnNumber: 20
 }, undefined);
-const container = /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
-    id: "main"
-}, [
-    parent,
-    newTag,
-    child
-]);
+// this will return both react element and components
+const Container2 = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponent, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 16,
+                columnNumber: 7
+            }, undefined),
+            [
+                parent,
+                newElement
+            ]
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 15,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Container2;
+// React components
+// Functional components => it is nothing but a javascript function which returns an react element or composition of elements or component itself
+// class based components -old way
+// functional component example
+const HeaderComponent = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "This is written using functional component"
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 27,
+        columnNumber: 10
+    }, undefined);
+};
+_c1 = HeaderComponent;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
-root.render(container);
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Container2, {}, void 0, false, {
+    fileName: "App.js",
+    lineNumber: 30,
+    columnNumber: 13
+}, undefined));
+var _c, _c1;
+$RefreshReg$(_c, "Container2");
+$RefreshReg$(_c1, "HeaderComponent");
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {
